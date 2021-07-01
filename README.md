@@ -6,8 +6,8 @@ This is the repository for the course of fundamentals of Data Bases with Platzi,
 * [Technologies](#technologies)
 * [Setup](#setup)
 * [Summary](#summary)
-* [Structure_DB](#structure_db)
-* [Non-Structure_DB](#non-structure_db)
+* [Relational_DB](#relational_db)
+* [Non-Relational_DB](#non-relational_db)
 * [Normalize](#normalize)
 > * [No-Normalize](#no-normalize)
 > * [1FN](#1FN)
@@ -28,11 +28,11 @@ Project is created with:
 ## Summary
 In this course talk about the two kinds of data bases (from now on I will just reference as DB), how to normalize them to make it more it more understendable and easy to program later on,
 
-## Structure_DB
-> Also know as Functional
+## Relational_DB
+> Also know as **Relational**
 
-## Non-Structure_DB
-> Also know as not **Functional**
+## Non-Relational_DB
+> Also know as not **Non-Relational**
 
 
 ## Normalize
