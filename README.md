@@ -6,14 +6,14 @@ This is the repository for the course of fundamentals of Data Bases with Platzi,
 * [Technologies](#technologies)
 * [Setup](#setup)
 * [Summary](#summary)
-> * [Structure_DB](#structure_db)
-> * [Non-Structure_DB](#non-structure_db)
-> * [Normalize](#normalize)
-> > * [No-Normalize](#no-normalize)
-> > * [1FN](#1FN)
-> > * [2FN](#2FN)
-> > * [3FN](#3FN)
-> > * [4FN](#4FN)
+* [Structure_DB](#structure_db)
+* [Non-Structure_DB](#non-structure_db)
+* [Normalize](#normalize)
+> * [No-Normalize](#no-normalize)
+> * [1FN](#1FN)
+> * [2FN](#2FN)
+> * [3FN](#3FN)
+> * [4FN](#4FN)
 
 
 ## Technologies
