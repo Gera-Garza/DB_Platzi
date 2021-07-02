@@ -72,7 +72,7 @@ In this form its about make the multi value data have not repeat data in between
 
 
 ## Basics_Commands
-There are some 5 basic commands the [CREATE](#create), [INSERT](#insert), [SELECT](#select),[ALTER](#alter),[DROP](#drop) next I will explain a little more about them 
+There are some 5 basic commands the [CREATE](#create), [INSERT](#insert), [SELECT](#select),[ALTER](#alter),[DROP](#drop) next I will explain a little more about them some of them are int the group of DML (Data Manipulation Lenguage) this coomands are insert, update, delete, select.
  
 ### CREATE
 The creat command it for **creating** it could be table, databases or views
@@ -118,3 +118,84 @@ This is for when you want to erase something it could be a row, a table or even 
 ALTER TABLE people DROP COLUMN date_of_birth;
  ```
 
+## QUERY
+This is when you want to know something from the DB the most basic coomands need it are [SELECT], and [FROM].
+> **SELECT** is for selecting a specific column and **FROM** is from what table is that column
+> **NOTE** if you see a * that means all data for example
+  ``` sql
+SELECT *
+FROM posts;
+ ```
+ Another example
+  ``` sql
+SELECT titulo, fecha_publicacion, estatus
+FROM posts;
+ ```
+ There are some functions like count() that does what it's name implies count the number of data that it finds with the data you give
+
+ ## JOINS
+
+
+ ### LEFT_JOIN
+ ``` sql
+ SELECT	*
+FROM	usuarios 
+LEFT JOIN posts on usuarios.id = posts.usuario_id;
+ ```
+
+ ### RIGHT JOIN
+``` sql
+SELECT	*
+FROM	usuarios 
+RIGHT JOIN posts on usuarios.id = posts.usuario_id
+ ```
+
+### INNER_JOIN
+``` sql
+SELECT	*
+FROM	usuarios 
+INNER JOIN posts on usuarios.id = posts.usuario_id;
+ ```
+
+### JOIN
+``` sql
+SELECT	*
+FROM	usuarios 
+JOIN posts on usuarios.id = posts.usuario_id;
+ ```
+
+## UNION
+In this case will combine the query in this case will show everything from both tables but related by usuarios_id
+``` sql
+SELECT	*
+FROM		usuarios 
+	LEFT JOIN posts   ON usuarios.id = posts.usuario_id
+UNION 
+SELECT	*
+FROM		usuarios 
+	RIGHT JOIN posts ON usuarios.id = posts.usuario_id;
+ ```
+
+## WHERE
+``` sql
+SELECT	*
+FROM		posts
+WHERE	id	< 50;
+ ```
+
+ ### LIKE
+ Search with that word 
+ > the simbol % means that it can have anything in that space it could be a letter or many words
+ ``` sql
+SELECT	*
+FROM		posts
+WHERE	titulo LIKE '%escandalo%';
+ ```
+
+
+### BETWEEN
+ ``` sql
+SELECT	*
+FROM		posts
+WHERE	YEAR(fecha_publicacion) BETWEEN '2023' AND '2024';
+ ```
