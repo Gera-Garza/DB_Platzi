@@ -18,8 +18,9 @@ This is the repository for the course of fundamentals of Data Bases with Platzi,
 > * [CREATE](#create)
 > * [INSERT](#insert)
 > * [SELECT](#select)
+> * [ALTER](#alter)
 > * [DROP](#drop)
-> * [VIEW](#view)
+
 ## Technologies
 Project is created with:
 * MYSQL server 8.0.25
@@ -71,10 +72,11 @@ In this form its about make the multi value data have not repeat data in between
 
 
 ## Basics_Commands
-There are some 4 basic commands the [CREATE](#create), [INSERT](#insert), [SELECT](#select), [DROP](#drop) next I will explain a little more about them 
+There are some 5 basic commands the [CREATE](#create), [INSERT](#insert), [SELECT](#select),[ALTER](#alter),[DROP](#drop) next I will explain a little more about them 
  
 ### CREATE
-The creat command it for **creating** it could be table, databases 
+The creat command it for **creating** it could be table, databases or views
+> **views** is a specific [SELECT](#select),  its a view of some data that you repeatly visit.
  ``` sql
 CREATE TABLE IF NOT EXISTS people (
 person_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
@@ -87,15 +89,32 @@ city VARCHAR(255) NULL
 
 ### INSERT
 This is for when you need to insert values in a table
-
+ ``` sql
+INSERT INTO `platziblog`.`people` (`person_id`, `last_name`, `first_name`, `address`, `city`) 
+VALUES ('1', 'Vásquez', 'Israel', 'Calle Famosa Num 1', 'México'),
+	       ('2', 'Hernández', 'Mónica', 'Reforma 222', 'México'),
+	       ('3', 'Alanis', 'Edgar', 'Central 1', 'Monterrey');
+ ```
 
 ### SELECT
 This is one of the most used commands it is for selecting a specific data in the data base, only selecting and ordering what you want
+> This is the most basic SELECT example is to see all the data that table have.
+ ``` sql
+SELECT * FROM people;
+ ```
 
+### ALTER
+With this command you can **alter** a table or row or column 
+> In the next example is for adding a column
+ ``` sql
+ALTER TABLE people ADD COLUMN date_of_birth DATETIME NULL AFTER city; 
+ ```
 
 ### DROP
 This is for when you want to erase something it could be a row, a table or even a DB
 > So be very careful when you use the **drop** command
+> In the example you will eliminate the column previously created
+ ``` sql
+ALTER TABLE people DROP COLUMN date_of_birth;
+ ```
 
-
-### VIEW
