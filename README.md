@@ -19,15 +19,15 @@ This is the repository for the course of fundamentals of Data Bases with Platzi,
 > * [INSERT](#insert)
 > * [SELECT](#select)
 > * [DROP](#drop)
-
+> * [VIEW](#view)
 ## Technologies
 Project is created with:
-* 
-> * 
+* MYSQL server 8.0.25
+> * My SQL Wrokbench 8.0.14
 
 	
 ## Setup
-
+To prepre your work you first need to donload the next program [MySQL](https://dev.mysql.com/downloads/windows/installer/5.6.html) and select the custom installation. Then install MySQL server there sould only show 1 option and in application select workbench and select also the only opcion that should show and install those.
 
 ## Summary
 In this course talk about the two kinds of data bases (from now on I will just reference as DB), how to normalize them to make it more it more understendable and easy to program later on,
@@ -96,3 +96,6 @@ This is one of the most used commands it is for selecting a specific data in the
 ### DROP
 This is for when you want to erase something it could be a row, a table or even a DB
 > So be very careful when you use the **drop** command
+
+
+### VIEW
