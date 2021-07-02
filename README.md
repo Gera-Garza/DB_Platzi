@@ -14,7 +14,11 @@ This is the repository for the course of fundamentals of Data Bases with Platzi,
 > * [2FN](#2FN)
 > * [3FN](#3FN)
 > * [4FN](#4FN)
-
+* [BASICS_COMMANDS](#basics_commands)
+> * [CREATE](#create)
+> * [INSERT](#insert)
+> * [SELECT](#select)
+> * [DROP](#drop)
 
 ## Technologies
 Project is created with:
@@ -65,3 +69,30 @@ In this form its about make the multi value data have not repeat data in between
 * Be on [3FN](#3FN)
 * The multi value filds are identify be a unique key
 
+
+## Basics_Commands
+There are some 4 basic commands the [CREATE](#create), [INSERT](#insert), [SELECT](#select), [DROP](#drop) next I will explain a little more about them 
+ 
+### CREATE
+The creat command it for **creating** it could be table, databases 
+ ``` sql
+CREATE TABLE IF NOT EXISTS people (
+person_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
+last_name VARCHAR(255) NULL,
+first_name VARCHAR(255) NULL,
+address VARCHAR(255) NULL, 
+city VARCHAR(255) NULL
+);
+ ```
+
+### INSERT
+This is for when you need to insert values in a table
+
+
+### SELECT
+This is one of the most used commands it is for selecting a specific data in the data base, only selecting and ordering what you want
+
+
+### DROP
+This is for when you want to erase something it could be a row, a table or even a DB
+> So be very careful when you use the **drop** command
