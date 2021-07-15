@@ -199,3 +199,24 @@ SELECT	*
 FROM		posts
 WHERE	YEAR(fecha_publicacion) BETWEEN '2023' AND '2024';
  ```
+
+ ## GROUP_BY
+ ``` sql
+SELECT estatus, COUNT(*) post_quantity
+FROM posts
+GROUP BY estatus;
+ ```
+
+
+## ORDER_BY
+ ``` sql
+SELECT *
+FROM posts
+ORDER BY  usuario_id DESC
+ ```
+ ### SPECIAL
+ * DESC
+ * ASC
+ * LIMIT
+
+ 
