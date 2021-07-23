@@ -15,11 +15,16 @@ This is the repository for the course of fundamentals of Data Bases with Platzi,
 > * [3FN](#3FN)
 > * [4FN](#4FN)
 * [BASICS_COMMANDS](#basics_commands)
-> * [CREATE](#create)
-> * [INSERT](#insert)
+> * [DDL](#ddl)
+> > * [CREATE](#create)
+> > * [ALTER](#alter)
+> > * [DROP](#drop)
+> * [DML](#dml)
+> > * [INSERT](#insert)
 > * [SELECT](#select)
-> * [ALTER](#alter)
-> * [DROP](#drop)
+> * [QUERY](#query)
+> [JOINS](#joins)
+> * [LEFT_JOIN](#left_join)
 
 ## Technologies
 Project is created with:
@@ -72,10 +77,12 @@ In this form its about make the multi value data have not repeat data in between
 
 
 ## Basics_Commands
-There are some 5 basic commands the [CREATE](#create), [INSERT](#insert), [SELECT](#select),[ALTER](#alter),[DROP](#drop) next I will explain a little more about them some of them are int the group of DML (Data Manipulation Lenguage) this coomands are insert, update, delete, select.
+There are some basic commands the [CREATE](#create), [INSERT](#insert), [SELECT](#select),[ALTER](#alter),[DROP](#drop) next I will explain a little more about them some of them are int the group of DML (Data Manipulation Lenguage) and DDL (Data Definition Lenguage).
  
-### CREATE
-The creat command it for **creating** it could be table, databases or views
+### DDL
+
+#### CREATE
+The create command it for **creating** it could be table, databases or views
 > **views** is a specific [SELECT](#select),  its a view of some data that you repeatly visit.
  ``` sql
 CREATE TABLE IF NOT EXISTS people (
@@ -87,6 +94,30 @@ city VARCHAR(255) NULL
 );
  ```
 
+### ALTER
+With this command you can **alter** a table or row or column 
+> In the next example is for adding a column
+ ``` sql
+ALTER TABLE people ADD COLUMN date_of_birth DATETIME NULL AFTER city; 
+ ```
+
+#### DROP
+This is for when you want to erase something it could be a row, a table or even a DB
+> So be very careful when you use the **drop** command
+> In the example you will eliminate the column previously created
+ ``` sql
+ALTER TABLE people DROP COLUMN date_of_birth;
+ ```
+
+### DML
+
+### SELECT
+This is one of the most used commands it is for selecting a specific data in the data base, only selecting and ordering what you want
+> This is the most basic SELECT example is to see all the data that table have.
+ ``` sql
+SELECT * FROM people;
+ ```
+
 ### INSERT
 This is for when you need to insert values in a table
  ``` sql
@@ -96,26 +127,17 @@ VALUES ('1', 'Vásquez', 'Israel', 'Calle Famosa Num 1', 'México'),
 	       ('3', 'Alanis', 'Edgar', 'Central 1', 'Monterrey');
  ```
 
-### SELECT
-This is one of the most used commands it is for selecting a specific data in the data base, only selecting and ordering what you want
-> This is the most basic SELECT example is to see all the data that table have.
- ``` sql
-SELECT * FROM people;
+### UPDATE
+The **UPDATE** statement is used to modify the existing records in a table.
+``` sql
+UPDATE Customers
+SET ContactName = 'Alfred Schmidt', City= 'Frankfurt'
+WHERE CustomerID = 1;
  ```
-
-### ALTER
-With this command you can **alter** a table or row or column 
-> In the next example is for adding a column
- ``` sql
-ALTER TABLE people ADD COLUMN date_of_birth DATETIME NULL AFTER city; 
- ```
-
-### DROP
-This is for when you want to erase something it could be a row, a table or even a DB
-> So be very careful when you use the **drop** command
-> In the example you will eliminate the column previously created
- ``` sql
-ALTER TABLE people DROP COLUMN date_of_birth;
+### DELETE
+The **DELETE** statement is used to delete existing records in a table.
+``` sql
+DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';
  ```
 
 ## QUERY
@@ -126,24 +148,29 @@ This is when you want to know something from the DB the most basic coomands need
 SELECT *
 FROM posts;
  ```
- Another example
-  ``` sql
+
+ > Another example
+
+``` sql
 SELECT titulo, fecha_publicacion, estatus
 FROM posts;
  ```
- There are some functions like count() that does what it's name implies count the number of data that it finds with the data you give
 
- ## JOINS
+ There are some functions like count() that does what it's name implies count the number of data that it finds with the data you give.
+
+## JOINS
 
 
- ### LEFT_JOIN
+### LEFT_JOIN
+
  ``` sql
  SELECT	*
 FROM	usuarios 
 LEFT JOIN posts on usuarios.id = posts.usuario_id;
  ```
 
- ### RIGHT JOIN
+### RIGHT JOIN
+
 ``` sql
 SELECT	*
 FROM	usuarios 
